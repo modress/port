@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -17,22 +17,15 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            blue: '#2563eb',
-                            hover: '#1d4ed8',
-                            light: '#3b82f6',
-                            glow: 'rgba(37, 99, 235, 0.12)'
-                        },
-                        lighttheme: {
-                            bg: '#ffffff',
-                            card: 'rgba(248, 250, 252, 0.9)',
-                            border: 'rgba(226, 232, 240, 0.8)',
-                            text: '#0f172a',
-                            muted: '#64748b'
+                        dark: {
+                            bg: '#07090e',
+                            card: 'rgba(18, 22, 31, 0.75)',
+                            border: 'rgba(255, 255, 255, 0.12)'
                         }
                     },
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        hand: ['Caveat', 'cursive']
                     }
                 }
             }
@@ -40,13 +33,13 @@
     </script>
     <style>
         body {
-            background-color: #ffffff;
-            color: #0f172a;
+            background-color: #07090e;
+            color: #ffffff;
             overflow-x: hidden;
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* Light Animated Glowing Circles */
+        /* Animated Dark Glowing Circles (Blobs) */
         .bg-glow-container {
             position: fixed;
             top: 0;
@@ -61,69 +54,85 @@
         .glow-circle {
             position: absolute;
             border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.6;
+            filter: blur(90px);
+            opacity: 0.45;
+            mix-blend-mode: screen;
         }
 
         .glow-1 {
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, rgba(147,197,253,0.1) 70%, transparent 100%);
-            top: -100px;
-            left: -100px;
-            animation: floatGlow1 12s infinite ease-in-out alternate;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #1e293b 0%, #0f172a 70%, transparent 100%);
+            top: -120px;
+            left: -120px;
+            animation: floatGlow1 14s infinite ease-in-out alternate;
         }
 
         .glow-2 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(219,234,254,0.2) 60%, transparent 100%);
-            bottom: 5%;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, #334155 0%, #1e1b4b 60%, transparent 100%);
+            bottom: 2%;
             right: -150px;
-            animation: floatGlow2 16s infinite ease-in-out alternate;
+            animation: floatGlow2 18s infinite ease-in-out alternate;
+        }
+
+        .glow-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #2563eb 0%, #1e1b4b 80%, transparent 100%);
+            top: 35%;
+            left: 25%;
+            animation: floatGlow3 15s infinite ease-in-out alternate;
         }
 
         @keyframes floatGlow1 {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(100px, 120px) scale(1.2); }
+            100% { transform: translate(140px, 160px) scale(1.2); }
         }
         @keyframes floatGlow2 {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(-120px, -100px) scale(1.1); }
+            100% { transform: translate(-150px, -130px) scale(1.15); }
+        }
+        @keyframes floatGlow3 {
+            0% { transform: translate(0, 0) scale(0.95); }
+            100% { transform: translate(-90px, 110px) scale(1.25); }
         }
 
         .glass-card {
-            background: rgba(248, 250, 252, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+            background: rgba(18, 22, 31, 0.75);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .glass-nav {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(7, 9, 14, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .tab-btn.active {
-            color: #ffffff;
-            background: #2563eb;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            color: #07090e;
+            background: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
         }
 
         .mobile-tab-btn.active {
-            color: #2563eb;
+            color: #ffffff;
+            font-weight: 800;
         }
     </style>
 </head>
-<body class="font-sans antialiased text-lighttheme-text min-h-screen flex flex-col justify-between selection:bg-brand-blue selection:text-white">
+<body class="font-sans antialiased text-white min-h-screen flex flex-col justify-between selection:bg-white selection:text-black">
 
-    <!-- Background Glowing Circles -->
+    <!-- Background Glowing Dark Circles -->
     <div class="bg-glow-container">
         <div class="glow-circle glow-1"></div>
         <div class="glow-circle glow-2"></div>
+        <div class="glow-circle glow-3"></div>
     </div>
 
     <!-- MAIN APP CONTAINER -->
@@ -133,13 +142,13 @@
         <header class="sticky top-0 z-40 glass-nav px-4 py-3">
             <div class="max-w-5xl mx-auto flex items-center justify-between">
                 <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('hero')">
-                    <div class="w-9 h-9 rounded-full overflow-hidden border-2 border-brand-blue shadow-sm bg-blue-50 flex items-center justify-center font-black text-brand-blue text-xs">
-                        M
+                    <div class="w-9 h-9 rounded-full overflow-hidden border-2 border-white shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="Modress Avatar" class="w-full h-full object-cover">
                     </div>
                     <div>
-                        <div class="font-bold text-lighttheme-text text-base tracking-wide">Modress</div>
-                        <div class="text-xs text-brand-blue flex items-center gap-1 font-semibold">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+                        <div class="font-bold text-white text-base tracking-wide">Modress</div>
+                        <div class="text-xs text-gray-400 flex items-center gap-1 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
                             Developer
                         </div>
                     </div>
@@ -148,14 +157,17 @@
                 <!-- Desktop Nav Tabs -->
                 <nav class="hidden md:flex items-center gap-1.5 text-xs font-semibold">
                     <button onclick="switchTab('hero')" id="tab-hero" class="tab-btn active px-3.5 py-2 rounded-xl transition-all">Главная</button>
-                    <button onclick="switchTab('about')" id="tab-about" class="tab-btn px-3.5 py-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-all">О мне</button>
-                    <button onclick="switchTab('websites')" id="tab-websites" class="tab-btn px-3.5 py-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-all">Веб-Сайты</button>
-                    <button onclick="switchTab('projects')" id="tab-projects" class="tab-btn px-3.5 py-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-all">TG Боты</button>
-                    <button onclick="switchTab('langs')" id="tab-langs" class="tab-btn px-3.5 py-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-all">Языки</button>
-                    <button onclick="switchTab('contact')" id="tab-contact" class="tab-btn px-3.5 py-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-all">Контакты</button>
+                    <button onclick="switchTab('about')" id="tab-about" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">О мне</button>
+                    <button onclick="switchTab('websites')" id="tab-websites" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-white"></span> Веб-Сайты
+                    </button>
+                    <button onclick="switchTab('projects')" id="tab-projects" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">TG Боты</button>
+                    <button onclick="switchTab('langs')" id="tab-langs" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">Языки</button>
+                    <button onclick="switchTab('tech')" id="tab-tech" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">Стек</button>
+                    <button onclick="switchTab('contact')" id="tab-contact" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">Контакты</button>
                 </nav>
 
-                <button onclick="tgOpen('https://t.me/neleron')" class="hidden sm:flex items-center gap-2 bg-brand-blue hover:bg-brand-hover text-white text-xs font-bold px-4 py-2 rounded-xl transition-all shadow-md shadow-brand-blue/20">
+                <button onclick="tgOpen('https://t.me/neleron')" class="hidden sm:flex items-center gap-2 bg-white text-black text-xs font-bold px-4 py-2 rounded-xl transition-all hover:bg-gray-200">
                     Написать @neleron
                 </button>
             </div>
@@ -164,97 +176,385 @@
         <!-- Dynamic Content Body -->
         <main class="max-w-5xl mx-auto px-4 pt-6 flex-1 w-full">
 
-            <!-- SECTION 1: HERO -->
+            <!-- SECTION 1: HERO / INTRO -->
             <section id="sec-hero" class="space-y-6">
-                <div class="glass-card p-6 md:p-8 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-200">
+                <div class="glass-card p-6 md:p-8 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
                     <div class="space-y-4 max-w-xl text-center md:text-left">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-brand-blue text-xs font-semibold">
-                            <span class="w-2 h-2 rounded-full bg-brand-blue animate-ping"></span>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium">
+                            <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
                             Разработка • Боты • Веб • Автоматизация
                         </div>
-                        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
                             Modress
                         </h1>
-                        <p class="text-lg font-bold text-slate-700">
+                        <p class="text-lg font-bold text-gray-300">
                             Разработчик и создатель проектов
                         </p>
-                        <p class="text-sm text-slate-600 leading-relaxed">
+                        <p class="text-sm text-gray-400 leading-relaxed">
                             Пишу код, который работает.<br>От Telegram-ботов до сложных веб-платформ и ИИ-сервисов.
                         </p>
                         <div class="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-3">
-                            <button onclick="tgOpen('https://t.me/neleron')" class="bg-brand-blue hover:bg-brand-hover text-white font-bold text-sm px-6 py-3 rounded-2xl flex items-center gap-2 shadow-lg shadow-brand-blue/20 transition-all">
+                            <button onclick="tgOpen('https://t.me/neleron')" class="bg-white hover:bg-gray-200 text-black font-extrabold text-sm px-6 py-3 rounded-2xl flex items-center gap-2 transition-all">
                                 Связь со мной @neleron →
                             </button>
-                            <button onclick="switchTab('websites')" class="bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm px-6 py-3 rounded-2xl border border-slate-200 shadow-sm transition-all">
+                            <button onclick="switchTab('websites')" class="bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-6 py-3 rounded-2xl border border-white/20 transition-all">
                                 Мои Веб-Проекты ↗
                             </button>
                         </div>
                     </div>
+                    
+                    <div class="relative group">
+                        <div class="w-64 h-64 md:w-72 md:h-72 rounded-3xl overflow-hidden border-2 border-white/30 shadow-2xl relative z-10">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Modress Art" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center text-xs text-gray-500 font-medium">
+                    Создаю проекты, которые приносят пользу
                 </div>
             </section>
 
-            <!-- SECTION 2: WEBSITES -->
+            <!-- SECTION 2: ABOUT ME -->
+            <section id="sec-about" class="hidden space-y-6">
+                <div class="glass-card p-6 md:p-8 rounded-3xl space-y-6">
+                    <h2 class="text-2xl font-bold text-white">О мне</h2>
+                    <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+                        Привет! Я <strong class="text-white">Modress</strong> — разработчик, который создаёт полезные и интересные проекты. Работаю с разными технологиями, люблю автоматизацию, ботов, веб-разработку и мобильные решения.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+                            <span>✈️</span> <span class="text-sm font-semibold text-gray-200">Создаю Telegram-ботов</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+                            <span>🌐</span> <span class="text-sm font-semibold text-gray-200">Разрабатываю веб-проекты</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+                            <span>⚙️</span> <span class="text-sm font-semibold text-gray-200">Пишу скрипты и автоматизацию</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
+                            <span>💡</span> <span class="text-sm font-semibold text-gray-200">Интересуюсь новыми технологиями</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: WEBSITES SHOWCASE WITH REAL IMAGES -->
             <section id="sec-websites" class="hidden space-y-6">
                 <div class="space-y-1">
-                    <h2 class="text-2xl font-extrabold text-slate-900">Мои Веб-Сайты</h2>
-                    <p class="text-xs text-slate-500">Коммерческие и интерактивные решения</p>
+                    <h2 class="text-2xl font-extrabold text-white">Мои Веб-Сайты</h2>
+                    <p class="text-xs text-gray-400">Реальные коммерческие и интерактивные веб-платформы</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="glass-card rounded-2xl p-5 border border-slate-200 space-y-3">
-                        <h3 class="text-lg font-bold text-slate-900">СОЗВОН</h3>
-                        <p class="text-xs text-slate-600">Платформа для видеозвонков без лишних установок.</p>
-                        <button onclick="tgOpen('https://sozvon-one.vercel.app/')" class="w-full bg-brand-blue hover:bg-brand-hover text-white text-xs font-bold py-2.5 rounded-xl transition-all">Перейти на сайт ↗</button>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    
+                    <!-- Созвон -->
+                    <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
+                        <div class="h-48 relative bg-gray-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&q=80&w=800" alt="Созвон" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-white text-black text-[10px] font-extrabold px-2.5 py-1 rounded-full">Созвоны</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white">СОЗВОН</h3>
+                            <p class="text-xs text-gray-400">Платформа для видеозвонков без приложений и лишних установок.</p>
+                            <button onclick="tgOpen('https://sozvon-one.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
+                                Перейти на сайт ↗
+                            </button>
+                        </div>
                     </div>
-                    <div class="glass-card rounded-2xl p-5 border border-slate-200 space-y-3">
-                        <h3 class="text-lg font-bold text-slate-900">БЕЛОГОРЬЕ</h3>
-                        <p class="text-xs text-slate-600">Школа сноуборда и горных лыж.</p>
-                        <button onclick="tgOpen('https://belogorye.vercel.app/')" class="w-full bg-brand-blue hover:bg-brand-hover text-white text-xs font-bold py-2.5 rounded-xl transition-all">Перейти на сайт ↗</button>
+
+                    <!-- Белогорье -->
+                    <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
+                        <div class="h-48 relative bg-gray-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&q=80&w=800" alt="Белогорье" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-white text-black text-[10px] font-extrabold px-2.5 py-1 rounded-full">Школа лыж</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white">БЕЛОГОРЬЕ</h3>
+                            <p class="text-xs text-gray-400">Школа сноуборда и горных лыж. Запись на обучение и прокат.</p>
+                            <button onclick="tgOpen('https://belogorye.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
+                                Перейти на сайт ↗
+                            </button>
+                        </div>
                     </div>
-                    <div class="glass-card rounded-2xl p-5 border border-slate-200 space-y-3">
-                        <h3 class="text-lg font-bold text-slate-900">DOMENTA</h3>
-                        <p class="text-xs text-slate-600">Системы автоматизации Умного Дома.</p>
-                        <button onclick="tgOpen('https://domenta-smart-home.vercel.app/')" class="w-full bg-brand-blue hover:bg-brand-hover text-white text-xs font-bold py-2.5 rounded-xl transition-all">Перейти на сайт ↗</button>
+
+                    <!-- Domenta -->
+                    <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
+                        <div class="h-48 relative bg-gray-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800" alt="Domenta" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-white text-black text-[10px] font-extrabold px-2.5 py-1 rounded-full">Smart Home</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white">DOMENTA</h3>
+                            <p class="text-xs text-gray-400">Системы автоматизации Умного Дома: климат, шторы, сценарии.</p>
+                            <button onclick="tgOpen('https://domenta-smart-home.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
+                                Перейти на сайт ↗
+                            </button>
+                        </div>
                     </div>
-                    <div class="glass-card rounded-2xl p-5 border border-slate-200 space-y-3">
-                        <h3 class="text-lg font-bold text-slate-900">АЙВИ</h3>
-                        <p class="text-xs text-slate-600">ИИ-помощник 24/7 для вашего бизнеса.</p>
-                        <button onclick="tgOpen('https://aivi-landing.vercel.app/')" class="w-full bg-brand-blue hover:bg-brand-hover text-white text-xs font-bold py-2.5 rounded-xl transition-all">Перейти на сайт ↗</button>
+
+                    <!-- Айвия -->
+                    <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
+                        <div class="h-48 relative bg-gray-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" alt="Айвия" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-white text-black text-[10px] font-extrabold px-2.5 py-1 rounded-full">AI Chatbot</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white">АЙВИЯ</h3>
+                            <p class="text-xs text-gray-400">ИИ-помощник 24/7 для общения с клиентами на вашем сайте.</p>
+                            <button onclick="tgOpen('https://aivi-landing.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
+                                Перейти на сайт ↗
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Пантела -->
+                    <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
+                        <div class="h-48 relative bg-gray-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="Пантела" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-white text-black text-[10px] font-extrabold px-2.5 py-1 rounded-full">CRM / Лиды</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white">ПАНТЕЛА</h3>
+                            <p class="text-xs text-gray-400">Заявки, которые обрабатывают себя сами с помощью AI.</p>
+                            <button onclick="tgOpen('https://lead-konveyer.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
+                                Перейти на сайт ↗
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Светло -->
+                    <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
+                        <div class="h-48 relative bg-gray-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=800" alt="Светло" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-white text-black text-[10px] font-extrabold px-2.5 py-1 rounded-full">Психотерапия</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white">СВЕТЛО</h3>
+                            <p class="text-xs text-gray-400">Сервис подбора психолога и консультаций онлайн.</p>
+                            <button onclick="tgOpen('https://sokolov-psy-demo.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
+                                Перейти на сайт ↗
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Меридиан -->
+                    <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group md:col-span-2">
+                        <div class="h-52 relative bg-gray-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000" alt="Меридиан" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-white text-black text-[10px] font-extrabold px-2.5 py-1 rounded-full">Туризм</span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-xl font-bold text-white">МЕРИДИАН</h3>
+                            <p class="text-xs text-gray-400">Клуб пеших походов и треккингов по Швейцарии (Маттерхорн).</p>
+                            <button onclick="tgOpen('https://meridian-travel-club.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
+                                Перейти на сайт ↗
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 4: BOTS (UPDATED WITH ALL NEW BOTS) -->
+            <section id="sec-projects" class="hidden space-y-6">
+                <div class="space-y-1">
+                    <h2 class="text-2xl font-bold text-white">Мои Telegram Боты</h2>
+                    <p class="text-xs text-gray-400">Работающие боты и сервисы в Telegram.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <div onclick="tgOpen('https://t.me/kaban_ucbot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">🐻</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">@kaban_ucbot</div>
+                            <div class="text-xs text-gray-400">Универсальный бот. Функционал в одном.</div>
+                        </div>
+                    </div>
+
+                    <div onclick="tgOpen('https://t.me/henz_ucbot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">H</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">@henz_ucbot</div>
+                            <div class="text-xs text-gray-400">Бот с широкими возможностями.</div>
+                        </div>
+                    </div>
+
+                    <div onclick="tgOpen('https://t.me/yandexmusicsbot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">🎵</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">@yandexmusicsbot</div>
+                            <div class="text-xs text-gray-400">Музыкальный бот Яндекс Музыки.</div>
+                        </div>
+                    </div>
+
+                    <div onclick="tgOpen('https://t.me/pikchervpnbot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">🛡️</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">@pikchervpnbot</div>
+                            <div class="text-xs text-gray-400">Быстрый и надежный VPN бот.</div>
+                        </div>
+                    </div>
+
+                    <div onclick="tgOpen('https://t.me/RawDataBot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">📄</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">@RawDataBot</div>
+                            <div class="text-xs text-gray-400">Бот для получения Raw данных API.</div>
+                        </div>
+                    </div>
+
+                    <div onclick="tgOpen('https://t.me/getidsbot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">🆔</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">@getidsbot</div>
+                            <div class="text-xs text-gray-400">Мгновенное получение Telegram ID.</div>
+                        </div>
+                    </div>
+
+                    <div onclick="tgOpen('https://t.me/RussiaChatGPTBot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">🤖</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">@RussiaChatGPTBot</div>
+                            <div class="text-xs text-gray-400">Доступ к ChatGPT в Telegram.</div>
+                        </div>
+                    </div>
+
+                    <div onclick="tgOpen('https://t.me/EyeStarsRobot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">⭐</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">@EyeStarsRobot</div>
+                            <div class="text-xs text-gray-400">Бот для работы со звёздами.</div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 5: LANGUAGES WITH LOGOS -->
+            <section id="sec-langs" class="hidden space-y-6">
+                <div class="space-y-1">
+                    <h2 class="text-2xl font-bold text-white">Языки программирования</h2>
+                    <p class="text-xs text-gray-400">Опыт разработки на разных языках и стек-технологиях.</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3">
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-8 h-8" alt="Python">
+                        <span class="text-xs font-bold text-white">Python</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-8 h-8" alt="JS">
+                        <span class="text-xs font-bold text-white">JavaScript</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-8 h-8" alt="TS">
+                        <span class="text-xs font-bold text-white">TypeScript</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-8 h-8" alt="HTML">
+                        <span class="text-xs font-bold text-white">HTML</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-8 h-8" alt="CSS">
+                        <span class="text-xs font-bold text-white">CSS</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-8 h-8" alt="PHP">
+                        <span class="text-xs font-bold text-white">PHP</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="w-8 h-8" alt="C">
+                        <span class="text-xs font-bold text-white">C</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-8 h-8" alt="C++">
+                        <span class="text-xs font-bold text-white">C++</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" class="w-8 h-8" alt="C#">
+                        <span class="text-xs font-bold text-white">C#</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-8 h-8" alt="Java">
+                        <span class="text-xs font-bold text-white">Java</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" class="w-8 h-8" alt="Kotlin">
+                        <span class="text-xs font-bold text-white">Kotlin</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" class="w-8 h-8" alt="Swift">
+                        <span class="text-xs font-bold text-white">Swift</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" class="w-8 h-8" alt="Go">
+                        <span class="text-xs font-bold text-white">Go</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" class="w-8 h-8 invert" alt="Rust">
+                        <span class="text-xs font-bold text-white">Rust</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" class="w-8 h-8" alt="Ruby">
+                        <span class="text-xs font-bold text-white">Ruby</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original.svg" class="w-8 h-8" alt="Lua">
+                        <span class="text-xs font-bold text-white">Lua</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" class="w-8 h-8" alt="Dart">
+                        <span class="text-xs font-bold text-white">Dart</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-8 h-8" alt="SQL">
+                        <span class="text-xs font-bold text-white">SQL</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" class="w-8 h-8" alt="Bash">
+                        <span class="text-xs font-bold text-white">Bash</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" class="w-8 h-8" alt="PowerShell">
+                        <span class="text-xs font-bold text-white">PowerShell</span>
                     </div>
                 </div>
             </section>
 
-            <!-- SECTION 3: BOTS -->
-            <section id="sec-projects" class="hidden space-y-6">
-                <div class="space-y-1">
-                    <h2 class="text-2xl font-bold text-slate-900">Telegram Боты</h2>
-                    <p class="text-xs text-slate-500">Работающие проекты и автоматизации</p>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div onclick="tgOpen('https://t.me/kaban_ucbot')" class="glass-card p-4 rounded-xl border border-slate-200 hover:border-brand-blue transition-all cursor-pointer flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">🐻</div>
+            <!-- SECTION 6: CONTACT -->
+            <section id="sec-contact" class="hidden space-y-6">
+                <div class="glass-card p-6 md:p-8 rounded-3xl space-y-6">
+                    <h2 class="text-2xl font-bold text-white">Связь со мной</h2>
+                    <p class="text-sm text-gray-400">Пишите по любым вопросам и заказам!</p>
+                    <div onclick="tgOpen('https://t.me/neleron')" class="p-4 rounded-2xl bg-white text-black font-extrabold cursor-pointer flex items-center justify-between">
                         <div>
-                            <div class="font-bold text-slate-900 text-sm">@kaban_ucbot</div>
-                            <div class="text-xs text-slate-500">Универсальный бот</div>
+                            <div class="text-base">@neleron</div>
+                            <div class="text-xs text-gray-700 font-semibold">Telegram</div>
                         </div>
-                    </div>
-                    <div onclick="tgOpen('https://t.me/RussiaChatGPTBot')" class="glass-card p-4 rounded-xl border border-slate-200 hover:border-brand-blue transition-all cursor-pointer flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold">🤖</div>
-                        <div>
-                            <div class="font-bold text-slate-900 text-sm">@RussiaChatGPTBot</div>
-                            <div class="text-xs text-slate-500">ChatGPT в Telegram</div>
-                        </div>
+                        <span class="text-lg">→</span>
                     </div>
                 </div>
             </section>
 
         </main>
 
-        <!-- Mobile Bottom Navigation Bar -->
-        <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-nav px-3 py-2 border-t border-slate-200">
+        <!-- Mobile Bottom Sticky Navigation -->
+        <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-nav px-3 py-2 border-t border-white/10">
             <div class="flex items-center justify-around text-[10px] font-bold">
                 <button onclick="switchTab('hero')" id="mtab-hero" class="mobile-tab-btn active flex flex-col items-center gap-1 py-1"><span>🏠</span> Главная</button>
                 <button onclick="switchTab('websites')" id="mtab-websites" class="mobile-tab-btn flex flex-col items-center gap-1 py-1"><span>🌐</span> Сайты</button>
                 <button onclick="switchTab('projects')" id="mtab-projects" class="mobile-tab-btn flex flex-col items-center gap-1 py-1"><span>🤖</span> Боты</button>
+                <button onclick="switchTab('langs')" id="mtab-langs" class="mobile-tab-btn flex flex-col items-center gap-1 py-1"><span>💻</span> Языки</button>
+                <button onclick="switchTab('contact')" id="mtab-contact" class="mobile-tab-btn flex flex-col items-center gap-1 py-1"><span>✉️</span> Связь</button>
             </div>
         </div>
 
@@ -265,7 +565,7 @@
         if (tg) { tg.ready(); tg.expand(); }
 
         function switchTab(tabId) {
-            ['hero', 'websites', 'projects'].forEach(s => {
+            ['hero', 'about', 'websites', 'projects', 'langs', 'contact'].forEach(s => {
                 const sec = document.getElementById(`sec-${s}`);
                 if (sec) sec.classList.add('hidden');
             });
