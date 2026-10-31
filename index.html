@@ -155,14 +155,13 @@
                 </div>
 
                 <!-- Desktop Nav Tabs -->
-                <nav class="hidden md:flex items-center gap-1.5 text-xs font-semibold">
+                <nav class="hidden md:flex items-center gap-1 text-xs font-semibold">
                     <button onclick="switchTab('hero')" id="tab-hero" class="tab-btn active px-3.5 py-2 rounded-xl transition-all">Главная</button>
                     <button onclick="switchTab('about')" id="tab-about" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">О мне</button>
-                    <button onclick="switchTab('websites')" id="tab-websites" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all flex items-center gap-1.5">
-                        <span class="w-2 h-2 rounded-full bg-white"></span> Веб-Сайты
-                    </button>
-                    <button onclick="switchTab('projects')" id="tab-projects" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">TG Боты</button>
+                    <button onclick="switchTab('websites')" id="tab-websites" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">Веб-Сайты</button>
+                    <button onclick="switchTab('projects')" id="tab-projects" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">Боты</button>
                     <button onclick="switchTab('langs')" id="tab-langs" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">Языки</button>
+                    <button onclick="switchTab('price')" id="tab-price" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">Прайс</button>
                     <button onclick="switchTab('tech')" id="tab-tech" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">Стек</button>
                     <button onclick="switchTab('contact')" id="tab-contact" class="tab-btn px-3.5 py-2 rounded-xl text-gray-300 hover:bg-white/10 transition-all">Контакты</button>
                 </nav>
@@ -197,15 +196,11 @@
                             <button onclick="tgOpen('https://t.me/neleron')" class="bg-white hover:bg-gray-200 text-black font-extrabold text-sm px-6 py-3.5 rounded-2xl flex items-center gap-2 transition-all shadow-lg">
                                 Связь со мной @neleron →
                             </button>
-                            <button onclick="switchTab('websites')" class="bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-6 py-3.5 rounded-2xl border border-white/20 transition-all">
-                                Мои Веб-Проекты ↗
+                            <button onclick="switchTab('price')" class="bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-6 py-3.5 rounded-2xl border border-white/20 transition-all">
+                                Посмотреть прайс 💎
                             </button>
                         </div>
                     </div>
-                </div>
-
-                <div class="text-center text-xs text-gray-500 font-medium">
-                    Создаю проекты, которые приносят пользу
                 </div>
             </section>
 
@@ -233,7 +228,7 @@
                 </div>
             </section>
 
-            <!-- SECTION 3: WEBSITES SHOWCASE WITH REAL IMAGES -->
+            <!-- SECTION 3: WEBSITES SHOWCASE -->
             <section id="sec-websites" class="hidden space-y-6">
                 <div class="space-y-1">
                     <h2 class="text-2xl font-extrabold text-white">Мои Веб-Сайты</h2>
@@ -241,8 +236,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    
-                    <!-- Созвон -->
                     <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
                         <div class="h-48 relative bg-gray-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&q=80&w=800" alt="Созвон" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
@@ -252,13 +245,10 @@
                         <div class="p-5 space-y-3">
                             <h3 class="text-xl font-bold text-white">СОЗВОН</h3>
                             <p class="text-xs text-gray-400">Платформа для видеозвонков без приложений и лишних установок.</p>
-                            <button onclick="tgOpen('https://sozvon-one.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
-                                Перейти на сайт ↗
-                            </button>
+                            <button onclick="tgOpen('https://sozvon-one.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">Перейти на сайт ↗</button>
                         </div>
                     </div>
 
-                    <!-- Белогорье -->
                     <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
                         <div class="h-48 relative bg-gray-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&q=80&w=800" alt="Белогорье" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
@@ -268,13 +258,10 @@
                         <div class="p-5 space-y-3">
                             <h3 class="text-xl font-bold text-white">БЕЛОГОРЬЕ</h3>
                             <p class="text-xs text-gray-400">Школа сноуборда и горных лыж. Запись на обучение и прокат.</p>
-                            <button onclick="tgOpen('https://belogorye.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
-                                Перейти на сайт ↗
-                            </button>
+                            <button onclick="tgOpen('https://belogorye.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">Перейти на сайт ↗</button>
                         </div>
                     </div>
 
-                    <!-- Domenta -->
                     <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
                         <div class="h-48 relative bg-gray-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800" alt="Domenta" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
@@ -284,13 +271,10 @@
                         <div class="p-5 space-y-3">
                             <h3 class="text-xl font-bold text-white">DOMENTA</h3>
                             <p class="text-xs text-gray-400">Системы автоматизации Умного Дома: климат, шторы, сценарии.</p>
-                            <button onclick="tgOpen('https://domenta-smart-home.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
-                                Перейти на сайт ↗
-                            </button>
+                            <button onclick="tgOpen('https://domenta-smart-home.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">Перейти на сайт ↗</button>
                         </div>
                     </div>
 
-                    <!-- Айвия -->
                     <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
                         <div class="h-48 relative bg-gray-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" alt="Айвия" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
@@ -300,13 +284,10 @@
                         <div class="p-5 space-y-3">
                             <h3 class="text-xl font-bold text-white">АЙВИЯ</h3>
                             <p class="text-xs text-gray-400">ИИ-помощник 24/7 для общения с клиентами на вашем сайте.</p>
-                            <button onclick="tgOpen('https://aivi-landing.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
-                                Перейти на сайт ↗
-                            </button>
+                            <button onclick="tgOpen('https://aivi-landing.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">Перейти на сайт ↗</button>
                         </div>
                     </div>
 
-                    <!-- Пантела -->
                     <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
                         <div class="h-48 relative bg-gray-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="Пантела" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
@@ -316,13 +297,10 @@
                         <div class="p-5 space-y-3">
                             <h3 class="text-xl font-bold text-white">ПАНТЕЛА</h3>
                             <p class="text-xs text-gray-400">Заявки, которые обрабатывают себя сами с помощью AI.</p>
-                            <button onclick="tgOpen('https://lead-konveyer.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
-                                Перейти на сайт ↗
-                            </button>
+                            <button onclick="tgOpen('https://lead-konveyer.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">Перейти на сайт ↗</button>
                         </div>
                     </div>
 
-                    <!-- Светло -->
                     <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
                         <div class="h-48 relative bg-gray-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=800" alt="Светло" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
@@ -332,13 +310,10 @@
                         <div class="p-5 space-y-3">
                             <h3 class="text-xl font-bold text-white">СВЕТЛО</h3>
                             <p class="text-xs text-gray-400">Сервис подбора психолога и консультаций онлайн.</p>
-                            <button onclick="tgOpen('https://sokolov-psy-demo.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
-                                Перейти на сайт ↗
-                            </button>
+                            <button onclick="tgOpen('https://sokolov-psy-demo.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">Перейти на сайт ↗</button>
                         </div>
                     </div>
 
-                    <!-- Меридиан -->
                     <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group md:col-span-2">
                         <div class="h-52 relative bg-gray-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000" alt="Меридиан" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
@@ -348,12 +323,9 @@
                         <div class="p-5 space-y-3">
                             <h3 class="text-xl font-bold text-white">МЕРИДИАН</h3>
                             <p class="text-xs text-gray-400">Клуб пеших походов и треккингов по Швейцарии (Маттерхорн).</p>
-                            <button onclick="tgOpen('https://meridian-travel-club.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">
-                                Перейти на сайт ↗
-                            </button>
+                            <button onclick="tgOpen('https://meridian-travel-club.vercel.app/')" class="w-full bg-white text-black font-extrabold text-xs py-2.5 rounded-xl transition-all hover:bg-gray-200">Перейти на сайт ↗</button>
                         </div>
                     </div>
-
                 </div>
             </section>
 
@@ -365,75 +337,42 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    
                     <div onclick="tgOpen('https://t.me/kaban_ucbot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
                         <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">🐻</div>
-                        <div>
-                            <div class="font-bold text-white text-sm">@kaban_ucbot</div>
-                            <div class="text-xs text-gray-400">Универсальный бот. Функционал в одном.</div>
-                        </div>
+                        <div><div class="font-bold text-white text-sm">@kaban_ucbot</div><div class="text-xs text-gray-400">Универсальный бот.</div></div>
                     </div>
-
                     <div onclick="tgOpen('https://t.me/henz_ucbot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
                         <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">H</div>
-                        <div>
-                            <div class="font-bold text-white text-sm">@henz_ucbot</div>
-                            <div class="text-xs text-gray-400">Бот с широкими возможностями.</div>
-                        </div>
+                        <div><div class="font-bold text-white text-sm">@henz_ucbot</div><div class="text-xs text-gray-400">Бот с возможностями.</div></div>
                     </div>
-
                     <div onclick="tgOpen('https://t.me/yandexmusicsbot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
                         <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">🎵</div>
-                        <div>
-                            <div class="font-bold text-white text-sm">@yandexmusicsbot</div>
-                            <div class="text-xs text-gray-400">Музыкальный бот Яндекс Музыки.</div>
-                        </div>
+                        <div><div class="font-bold text-white text-sm">@yandexmusicsbot</div><div class="text-xs text-gray-400">Яндекс Музыка бот.</div></div>
                     </div>
-
                     <div onclick="tgOpen('https://t.me/pikchervpnbot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
                         <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">🛡️</div>
-                        <div>
-                            <div class="font-bold text-white text-sm">@pikchervpnbot</div>
-                            <div class="text-xs text-gray-400">Быстрый и надежный VPN бот.</div>
-                        </div>
+                        <div><div class="font-bold text-white text-sm">@pikchervpnbot</div><div class="text-xs text-gray-400">VPN бот.</div></div>
                     </div>
-
                     <div onclick="tgOpen('https://t.me/RawDataBot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
                         <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">📄</div>
-                        <div>
-                            <div class="font-bold text-white text-sm">@RawDataBot</div>
-                            <div class="text-xs text-gray-400">Бот для получения Raw данных API.</div>
-                        </div>
+                        <div><div class="font-bold text-white text-sm">@RawDataBot</div><div class="text-xs text-gray-400">Raw API данные.</div></div>
                     </div>
-
                     <div onclick="tgOpen('https://t.me/getidsbot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
                         <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">🆔</div>
-                        <div>
-                            <div class="font-bold text-white text-sm">@getidsbot</div>
-                            <div class="text-xs text-gray-400">Мгновенное получение Telegram ID.</div>
-                        </div>
+                        <div><div class="font-bold text-white text-sm">@getidsbot</div><div class="text-xs text-gray-400">Получение Telegram ID.</div></div>
                     </div>
-
                     <div onclick="tgOpen('https://t.me/RussiaChatGPTBot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
                         <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">🤖</div>
-                        <div>
-                            <div class="font-bold text-white text-sm">@RussiaChatGPTBot</div>
-                            <div class="text-xs text-gray-400">Доступ к ChatGPT в Telegram.</div>
-                        </div>
+                        <div><div class="font-bold text-white text-sm">@RussiaChatGPTBot</div><div class="text-xs text-gray-400">ChatGPT в Telegram.</div></div>
                     </div>
-
                     <div onclick="tgOpen('https://t.me/EyeStarsRobot')" class="glass-card p-4 rounded-2xl cursor-pointer flex items-center gap-4 hover:border-white/40 transition-all">
                         <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center font-bold">⭐</div>
-                        <div>
-                            <div class="font-bold text-white text-sm">@EyeStarsRobot</div>
-                            <div class="text-xs text-gray-400">Бот для работы со звёздами.</div>
-                        </div>
+                        <div><div class="font-bold text-white text-sm">@EyeStarsRobot</div><div class="text-xs text-gray-400">Работа со звёздами.</div></div>
                     </div>
-
                 </div>
             </section>
 
-            <!-- SECTION 5: LANGUAGES WITH LOGOS -->
+            <!-- SECTION 5: LANGUAGES -->
             <section id="sec-langs" class="hidden space-y-6">
                 <div class="space-y-1">
                     <h2 class="text-2xl font-bold text-white">Языки программирования</h2>
@@ -441,90 +380,106 @@
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3">
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-8 h-8" alt="Python">
-                        <span class="text-xs font-bold text-white">Python</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-8 h-8" alt="JS">
-                        <span class="text-xs font-bold text-white">JavaScript</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-8 h-8" alt="TS">
-                        <span class="text-xs font-bold text-white">TypeScript</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-8 h-8" alt="HTML">
-                        <span class="text-xs font-bold text-white">HTML</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-8 h-8" alt="CSS">
-                        <span class="text-xs font-bold text-white">CSS</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-8 h-8" alt="PHP">
-                        <span class="text-xs font-bold text-white">PHP</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="w-8 h-8" alt="C">
-                        <span class="text-xs font-bold text-white">C</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-8 h-8" alt="C++">
-                        <span class="text-xs font-bold text-white">C++</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" class="w-8 h-8" alt="C#">
-                        <span class="text-xs font-bold text-white">C#</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-8 h-8" alt="Java">
-                        <span class="text-xs font-bold text-white">Java</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" class="w-8 h-8" alt="Kotlin">
-                        <span class="text-xs font-bold text-white">Kotlin</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" class="w-8 h-8" alt="Swift">
-                        <span class="text-xs font-bold text-white">Swift</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" class="w-8 h-8" alt="Go">
-                        <span class="text-xs font-bold text-white">Go</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" class="w-8 h-8 invert" alt="Rust">
-                        <span class="text-xs font-bold text-white">Rust</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" class="w-8 h-8" alt="Ruby">
-                        <span class="text-xs font-bold text-white">Ruby</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original.svg" class="w-8 h-8" alt="Lua">
-                        <span class="text-xs font-bold text-white">Lua</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" class="w-8 h-8" alt="Dart">
-                        <span class="text-xs font-bold text-white">Dart</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-8 h-8" alt="SQL">
-                        <span class="text-xs font-bold text-white">SQL</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" class="w-8 h-8" alt="Bash">
-                        <span class="text-xs font-bold text-white">Bash</span>
-                    </div>
-                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" class="w-8 h-8" alt="PowerShell">
-                        <span class="text-xs font-bold text-white">PowerShell</span>
-                    </div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">Python</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">JavaScript</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">TypeScript</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">HTML</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">CSS</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">PHP</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">C</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">C++</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">C#</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">Java</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">Kotlin</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">Swift</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">Go</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" class="w-8 h-8 invert"><span class="text-xs font-bold text-white">Rust</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">Ruby</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">Lua</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">Dart</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">SQL</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">Bash</span></div>
+                    <div class="glass-card p-4 rounded-2xl flex flex-col items-center justify-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" class="w-8 h-8"><span class="text-xs font-bold text-white">PowerShell</span></div>
                 </div>
             </section>
 
-            <!-- SECTION 6: TECH & TOOLS -->
+            <!-- SECTION 6: PRICING / ПРАЙС -->
+            <section id="sec-price" class="hidden space-y-6">
+                <div class="space-y-1">
+                    <h2 class="text-2xl font-bold text-white">Прайс-лист</h2>
+                    <p class="text-xs text-gray-400">Стоимость разработки и услуг под ключ.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    
+                    <!-- Карточка 1 -->
+                    <div class="glass-card p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10">
+                        <div class="space-y-2">
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-white text-[10px] font-extrabold uppercase tracking-wider">Telegram Бот</span>
+                            <h3 class="text-xl font-extrabold text-white">Базовый бот</h3>
+                            <p class="text-xs text-gray-400">Простой бот с кнопками, ответами на сообщения и базовой логикой на Python.</p>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-extrabold text-white">от 5 000 ₽</div>
+                                <div class="text-xs text-gray-400">или ~250 ⭐</div>
+                            </div>
+                            <button onclick="tgOpen('https://t.me/neleron')" class="bg-white text-black font-extrabold text-xs px-4 py-2.5 rounded-xl hover:bg-gray-200 transition-all">Заказать</button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 2 -->
+                    <div class="glass-card p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10">
+                        <div class="space-y-2">
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-white text-[10px] font-extrabold uppercase tracking-wider">Telegram Mini App</span>
+                            <h3 class="text-xl font-extrabold text-white">Mini App / WebApp</h3>
+                            <p class="text-xs text-gray-400">Полноценное веб-приложение внутри Telegram с дизайном и интеграцией бэкенда.</p>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-extrabold text-white">от 15 000 ₽</div>
+                                <div class="text-xs text-gray-400">или ~750 ⭐</div>
+                            </div>
+                            <button onclick="tgOpen('https://t.me/neleron')" class="bg-white text-black font-extrabold text-xs px-4 py-2.5 rounded-xl hover:bg-gray-200 transition-all">Заказать</button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 3 -->
+                    <div class="glass-card p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10">
+                        <div class="space-y-2">
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-white text-[10px] font-extrabold uppercase tracking-wider">Web Development</span>
+                            <h3 class="text-xl font-extrabold text-white">Лендинг / Сайт</h3>
+                            <p class="text-xs text-gray-400">Современный адаптивный сайт или посадочная страница с анимациями.</p>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-extrabold text-white">от 10 000 ₽</div>
+                                <div class="text-xs text-gray-400">или ~500 ⭐</div>
+                            </div>
+                            <button onclick="tgOpen('https://t.me/neleron')" class="bg-white text-black font-extrabold text-xs px-4 py-2.5 rounded-xl hover:bg-gray-200 transition-all">Заказать</button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 4 -->
+                    <div class="glass-card p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10">
+                        <div class="space-y-2">
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-white text-[10px] font-extrabold uppercase tracking-wider">Complex Solution</span>
+                            <h3 class="text-xl font-extrabold text-white">Сложный проект / ИИ</h3>
+                            <p class="text-xs text-gray-400">Интеграция нейросетей (ChatGPT, API), платежных систем, баз данных и админки.</p>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-extrabold text-white">от 25 000 ₽</div>
+                                <div class="text-xs text-gray-400">или ~1 250 ⭐</div>
+                            </div>
+                            <button onclick="tgOpen('https://t.me/neleron')" class="bg-white text-black font-extrabold text-xs px-4 py-2.5 rounded-xl hover:bg-gray-200 transition-all">Заказать</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 7: TECH -->
             <section id="sec-tech" class="hidden space-y-6">
                 <div class="space-y-1">
                     <h2 class="text-2xl font-bold text-white">Технологии и инструменты</h2>
@@ -532,58 +487,17 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="glass-card p-5 rounded-2xl space-y-2">
-                        <div class="flex items-center gap-2 text-white font-bold text-sm">
-                            <span>💻</span> Backend
-                        </div>
-                        <p class="text-xs text-gray-400">Python, PHP, Node.js, Go, Java</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl space-y-2">
-                        <div class="flex items-center gap-2 text-white font-bold text-sm">
-                            <span>🔧</span> Инструменты
-                        </div>
-                        <p class="text-xs text-gray-400">Git, Docker, Linux, Nginx, VS Code, Figma</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl space-y-2">
-                        <div class="flex items-center gap-2 text-white font-bold text-sm">
-                            <span>🖥️</span> Frontend
-                        </div>
-                        <p class="text-xs text-gray-400">JavaScript, TypeScript, HTML, CSS, React, Vue, Next.js</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl space-y-2">
-                        <div class="flex items-center gap-2 text-white font-bold text-sm">
-                            <span>⚙️</span> Автоматизация
-                        </div>
-                        <p class="text-xs text-gray-400">Bash, PowerShell, Cron, CI/CD</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl space-y-2">
-                        <div class="flex items-center gap-2 text-white font-bold text-sm">
-                            <span>📱</span> Mobile
-                        </div>
-                        <p class="text-xs text-gray-400">Kotlin, Swift, Flutter, React Native</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl space-y-2">
-                        <div class="flex items-center gap-2 text-white font-bold text-sm">
-                            <span>☁️</span> Дополнительно
-                        </div>
-                        <p class="text-xs text-gray-400">Telegram API, OpenAI API, Cloudflare, VPS</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl space-y-2 md:col-span-2">
-                        <div class="flex items-center gap-2 text-white font-bold text-sm">
-                            <span>🗄️</span> Базы данных
-                        </div>
-                        <p class="text-xs text-gray-400">MySQL, PostgreSQL, MongoDB, SQLite</p>
-                    </div>
+                    <div class="glass-card p-5 rounded-2xl space-y-2"><div class="flex items-center gap-2 text-white font-bold text-sm"><span>💻</span> Backend</div><p class="text-xs text-gray-400">Python, PHP, Node.js, Go, Java</p></div>
+                    <div class="glass-card p-5 rounded-2xl space-y-2"><div class="flex items-center gap-2 text-white font-bold text-sm"><span>🔧</span> Инструменты</div><p class="text-xs text-gray-400">Git, Docker, Linux, Nginx, VS Code, Figma</p></div>
+                    <div class="glass-card p-5 rounded-2xl space-y-2"><div class="flex items-center gap-2 text-white font-bold text-sm"><span>🖥️</span> Frontend</div><p class="text-xs text-gray-400">JavaScript, TypeScript, HTML, CSS, React, Vue, Next.js</p></div>
+                    <div class="glass-card p-5 rounded-2xl space-y-2"><div class="flex items-center gap-2 text-white font-bold text-sm"><span>⚙️</span> Автоматизация</div><p class="text-xs text-gray-400">Bash, PowerShell, Cron, CI/CD</p></div>
+                    <div class="glass-card p-5 rounded-2xl space-y-2"><div class="flex items-center gap-2 text-white font-bold text-sm"><span>📱</span> Mobile</div><p class="text-xs text-gray-400">Kotlin, Swift, Flutter, React Native</p></div>
+                    <div class="glass-card p-5 rounded-2xl space-y-2"><div class="flex items-center gap-2 text-white font-bold text-sm"><span>☁️</span> Дополнительно</div><p class="text-xs text-gray-400">Telegram API, OpenAI API, Cloudflare, VPS</p></div>
+                    <div class="glass-card p-5 rounded-2xl space-y-2 md:col-span-2"><div class="flex items-center gap-2 text-white font-bold text-sm"><span>🗄️</span> Базы данных</div><p class="text-xs text-gray-400">MySQL, PostgreSQL, MongoDB, SQLite</p></div>
                 </div>
             </section>
 
-            <!-- SECTION 7: CONTACT -->
+            <!-- SECTION 8: CONTACT -->
             <section id="sec-contact" class="hidden space-y-6">
                 <div class="glass-card p-6 md:p-8 rounded-3xl space-y-6">
                     <h2 class="text-2xl font-bold text-white">Связь со мной</h2>
@@ -606,7 +520,7 @@
                 <button onclick="switchTab('hero')" id="mtab-hero" class="mobile-tab-btn active flex flex-col items-center gap-1 py-1 text-gray-400"><span>🏠</span> Главная</button>
                 <button onclick="switchTab('websites')" id="mtab-websites" class="mobile-tab-btn flex flex-col items-center gap-1 py-1 text-gray-400"><span>🌐</span> Сайты</button>
                 <button onclick="switchTab('projects')" id="mtab-projects" class="mobile-tab-btn flex flex-col items-center gap-1 py-1 text-gray-400"><span>🤖</span> Боты</button>
-                <button onclick="switchTab('langs')" id="mtab-langs" class="mobile-tab-btn flex flex-col items-center gap-1 py-1 text-gray-400"><span>💻</span> Языки</button>
+                <button onclick="switchTab('price')" id="mtab-price" class="mobile-tab-btn flex flex-col items-center gap-1 py-1 text-gray-400"><span>💎</span> Прайс</button>
                 <button onclick="switchTab('contact')" id="mtab-contact" class="mobile-tab-btn flex flex-col items-center gap-1 py-1 text-gray-400"><span>✉️</span> Связь</button>
             </div>
         </div>
@@ -618,7 +532,7 @@
         if (tg) { tg.ready(); tg.expand(); }
 
         function switchTab(tabId) {
-            ['hero', 'about', 'websites', 'projects', 'langs', 'tech', 'contact'].forEach(s => {
+            ['hero', 'about', 'websites', 'projects', 'langs', 'price', 'tech', 'contact'].forEach(s => {
                 const sec = document.getElementById(`sec-${s}`);
                 if (sec) sec.classList.add('hidden');
             });
