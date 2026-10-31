@@ -524,11 +524,62 @@
                 </div>
             </section>
 
-            <!-- SECTION 6: TECH -->
+            <!-- SECTION 6: TECH & TOOLS -->
             <section id="sec-tech" class="hidden space-y-6">
-                <div class="glass-card p-6 md:p-8 rounded-3xl space-y-4">
-                    <h2 class="text-2xl font-bold text-white">Технологии</h2>
-                    <p class="text-gray-400 text-sm">Современный стек для разработки надёжных систем.</p>
+                <div class="space-y-1">
+                    <h2 class="text-2xl font-bold text-white">Технологии и инструменты</h2>
+                    <p class="text-xs text-gray-400">Работаю с современным стеком разработки.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="glass-card p-5 rounded-2xl space-y-2">
+                        <div class="flex items-center gap-2 text-white font-bold text-sm">
+                            <span>💻</span> Backend
+                        </div>
+                        <p class="text-xs text-gray-400">Python, PHP, Node.js, Go, Java</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl space-y-2">
+                        <div class="flex items-center gap-2 text-white font-bold text-sm">
+                            <span>🔧</span> Инструменты
+                        </div>
+                        <p class="text-xs text-gray-400">Git, Docker, Linux, Nginx, VS Code, Figma</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl space-y-2">
+                        <div class="flex items-center gap-2 text-white font-bold text-sm">
+                            <span>🖥️</span> Frontend
+                        </div>
+                        <p class="text-xs text-gray-400">JavaScript, TypeScript, HTML, CSS, React, Vue, Next.js</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl space-y-2">
+                        <div class="flex items-center gap-2 text-white font-bold text-sm">
+                            <span>⚙️</span> Автоматизация
+                        </div>
+                        <p class="text-xs text-gray-400">Bash, PowerShell, Cron, CI/CD</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl space-y-2">
+                        <div class="flex items-center gap-2 text-white font-bold text-sm">
+                            <span>📱</span> Mobile
+                        </div>
+                        <p class="text-xs text-gray-400">Kotlin, Swift, Flutter, React Native</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl space-y-2">
+                        <div class="flex items-center gap-2 text-white font-bold text-sm">
+                            <span>☁️</span> Дополнительно
+                        </div>
+                        <p class="text-xs text-gray-400">Telegram API, OpenAI API, Cloudflare, VPS</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl space-y-2 md:col-span-2">
+                        <div class="flex items-center gap-2 text-white font-bold text-sm">
+                            <span>🗄️</span> Базы данных
+                        </div>
+                        <p class="text-xs text-gray-400">MySQL, PostgreSQL, MongoDB, SQLite</p>
+                    </div>
                 </div>
             </section>
 
@@ -567,25 +618,20 @@
         if (tg) { tg.ready(); tg.expand(); }
 
         function switchTab(tabId) {
-            // Скрываем все секции
             ['hero', 'about', 'websites', 'projects', 'langs', 'tech', 'contact'].forEach(s => {
                 const sec = document.getElementById(`sec-${s}`);
                 if (sec) sec.classList.add('hidden');
             });
             
-            // Показываем нужную секцию
             const activeSec = document.getElementById(`sec-${tabId}`);
             if (activeSec) activeSec.classList.remove('hidden');
 
-            // Убираем активный класс со всех десктопных и мобильных кнопок
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active', 'bg-white', 'text-black'));
             document.querySelectorAll('.mobile-tab-btn').forEach(btn => btn.classList.remove('active', 'text-white'));
 
-            // Подсвечиваем десктопную кнопку
             const dBtn = document.getElementById(`tab-${tabId}`);
             if (dBtn) dBtn.classList.add('active');
 
-            // Подсвечиваем мобильную кнопку
             const mBtn = document.getElementById(`mtab-${tabId}`);
             if (mBtn) mBtn.classList.add('active', 'text-white');
 
